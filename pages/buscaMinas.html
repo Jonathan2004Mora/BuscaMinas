@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="image/png" sizes="96x96" rel="icon" href="../images/icons8-minesweeper-96.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Busca Minas-Minesweeper."> 
+    <meta name="keywords" content="HTML, PHP, CSS, Bootstrap, diseño web, metas">
+    <meta name="author" content="Jonathan Mora Castro, Jairo"> 
+    <title>Juego</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <h1 class="explota">
+    <span style="--i:0">B</span>
+    <span style="--i:1">u</span>
+    <span style="--i:2">s</span>
+    <span style="--i:3">c</span>
+    <span style="--i:4">a</span>
+    <span style="--i:5"> </span>
+    <span style="--i:6">M</span>
+    <span style="--i:7">i</span>
+    <span style="--i:8">n</span>
+    <span style="--i:9">a</span>
+    <span style="--i:10">s</span>
+  </h1>
+    <h2>Seleccione el tamaño de el tablero</h2>
+    
+    <form id="formulario">
+        <!-- Selector de dificultad -->
+        <label for="dificultad">Dificultad:</label>
+        <select id="dificultad" name="dificultad">
+            <option value="facil">Fácil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Difícil</option>
+        </select><br><br>
+    
+        <!-- Botón para crear el tablero según la dificultad seleccionada -->
+        <button type="submit" id="crearTablero">Crear Tablero</button>
+    </form>
+
+    <div>
+        <!-- Botón para abrir el modal -->
+        <button id="reglasBtn" class="boton-link">Reglas del Juego</button>
+        <!-- Contador de bombas -->
+        <h3>Bombas restantes: <span id="contadorBombas">0</span></h3>
+        <!-- Cronómetro -->
+        <h3>Tiempo: <span id="cronometro">0</span> segundos</h3>
+        <!-- Salir del juego -->
+        <a class="boton-link" href="http://localhost/ProyectoPrograIVNewable/index.php">Salir</a>
+    </div>
+    
+    <div class="tablero" id="tablero">
+        <!-- Las casillas del tablero se generarán aquí -->
+    </div>
+
+            <!-- Modal con las reglas -->
+    <div id="modalReglas" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h2>Reglas del Buscaminas</h2>
+
+        <h3>🎯 Objetivo del juego</h3>
+        <p>Descubrir todas las casillas que no tienen minas. Si haces clic en una mina, pierdes.</p>
+
+        <h3>🖱️ Controles</h3>
+        <ul>
+        <li><strong>Click izquierdo:</strong> Revela una casilla.</li>
+        <li><strong>Click derecho:</strong> Coloca o quita una bandera.</li>
+        </ul>
+
+        <h3>🔢 Números</h3>
+        <p>Los números indican cuántas minas hay en las casillas adyacentes:</p>
+        <img src="../images/1Bomba.PNG" alt="1 bomba cercana" width="80px">
+        <img src="../images/2Bombas.PNG" alt="2 bombas cercanas" width="80px">
+        <img src="../images/3Bombas.PNG" alt="3 bombas cercanas" width="80px">
+        <br><br>
+
+        <h3>🚩 Banderas</h3>
+        <p>Usa banderas para marcar casillas donde crees que hay una mina.</p>
+        <img src="../images/Bandera.PNG" alt="Ejemplo de bandera" width="80px">
+        <br><br>
+
+        <h3>💣 Pérdida</h3>
+        <p>Si haces clic en una mina perderas la partida.</p>
+    </div>
+    </div>
+
+    <!-- Modal de mensajes reutilizable -->
+    <div id="modalMensajes" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarMensaje">&times;</span>
+            <p id="textoMensaje"></p>
+        </div>
+    </div>
+
+
+    <script src="../js/script.js"></script>
+    <footer>
+    <p>Estudiantes: Jonathan Mora Castro y Jairo Valverde Ramirez</p>
+    <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
