@@ -7,7 +7,7 @@ function conectarBD() {
     $mysqli->set_charset("utf8");
     return $mysqli;
 }
-
+// Funciones para manejar usuarios
 function agregarUsuarioBD($identificacion, $nombre, $correo, $contrasena) {
     $mysqli = conectarBD();
     // Generar hash seguro de la contraseña
